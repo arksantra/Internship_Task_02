@@ -1,0 +1,298 @@
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: whitesmoke;
+            background-image: url("images/elegant-white-background-with-shiny-lines_1017-17580.jpg");
+            background-repeat: repeat;
+            
+            border: 5px thick silver;
+        }
+        
+#tab {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -10%);
+}
+
+table {
+	width: 800px;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(82, 250, 138, 0.856);
+}
+
+th{
+    padding: 15px;
+    background-color: rgba(72, 83, 74, 0.856);
+    color: whitesmoke;
+}
+td {
+	padding: 15px;
+	background-color: rgba(22, 16, 16, 0.281);
+	color: rgb(0, 0, 0);
+}
+
+th {
+	text-align: left;
+}
+
+thead {
+	th {
+		background-color: #55608f;
+	}
+}
+
+tbody {
+	tr {
+		&:hover {
+			background-color: rgba(255,255,255,0.3);
+		}
+	}
+	td {
+		position: relative;
+		&:hover {
+			&:before {
+				content: "";
+				position: relative;
+				left: 0;
+				right: 0;
+				top: -9999px;
+				bottom: -9999px;
+				background-color: rgba(255,255,255,0.2);
+				z-index: -1;
+			}
+		}
+	}
+}
+        #export{
+            background-color: rgba(37, 199, 110, 0.705);
+            border:2px double rgb(24, 70, 48) ;
+            border-radius: 5px;
+            color: teal;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: inherit;
+            font-weight: bold;
+            padding: 1.2em;
+            width: 150px;
+        }
+    </style>
+    
+</head>
+
+<body>
+
+    <center>
+        <a " href=""></a><img style="width: 18%; height: auto;"" src="images/replace1.svg"></a>
+        <br>
+        <br>
+        <br>
+    </center>
+    
+    <br/>
+
+    <center>
+        
+    <div id="tab">
+        
+        <table id="tbl">
+                <tr>
+                    <th>STUDENT</th>
+                    <th>MARKS</th>
+                    <th>COEF</th>
+                    <th>TOTAL(Mark * Coef)</th>
+
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" placeholder="Student" id='s' required />
+                    </td>
+                    <td>
+                        <input type="number" placeholder="Score" id='m' required />
+                    </td>
+                    <td>
+                        <input type="number" placeholder="Coef" id='c' required />
+                    </td>
+                    <td>
+                        <input type="key" onkeypress='calculate();' placeholder="Total" id='t' />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" placeholder="Student" id='s2' required />
+                    </td>
+                    <td>
+                        <input type="number" placeholder="Score" id='m2' required />
+                    </td>
+                    <td>
+                        <input type="number" placeholder="Coef" id='c2' required />
+                    </td>
+                    <td>
+                        <input type="key" onkeypress='calculate2();' placeholder="Total" id='t2' />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" placeholder="Student" id='s3' required />
+                    </td>
+                    <td>
+                        <input type="number" placeholder="Score" id='m3' required />
+                    </td>
+                    <td>
+                        <input type="number" placeholder="Coef" id='c3' required />
+                    </td>
+                    <td>
+                        <input type="key" onkeypress='calculate3();' placeholder="Total" id='t3' />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" placeholder="Student" id='s4' required />
+                    </td>
+                    <td>
+                        <input type="number" placeholder="Score" id='m4' required />
+                    </td>
+                    <td>
+                        <input type="number" placeholder="Coef" id='c4' required />
+                    </td>
+                    <td>
+                        <input type="key" onkeypress='calculate4();' placeholder="Total" id='t4' />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" placeholder="Student" id='s5' required />
+                    </td>
+                    <td>
+                        <input type="number" placeholder="Score" id='m5' required />
+                    </td>
+                    <td>
+                        <input type="number" placeholder="Coef" id='c5' required />
+                    </td>
+                    <td>
+                        <input type="key" onkeypress='calculate5();' placeholder="Total" id='t5' />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" placeholder="Student" id='s6' required />
+                    </td>
+                    <td>
+                        <input type="number" placeholder="Score" id='m6' required />
+                    </td>
+                    <td>
+                        <input type="number" placeholder="Coef" id='c6' required />
+                    </td>
+                    <td>
+                        <input type="key" onkeypress='calculate6();' placeholder="Total" id='t6' />
+                    </td>
+                </tr>
+        </table>
+        
+    </div>
+   
+        <img style="width: 18%; height: auto; " src="images/replace2.svg" >
+        <br>
+        <br>
+        <br/>
+        <br/>
+        <input id="export" type="button" id="btnExport" value="Export" />
+        <br/>
+        <br/>
+        
+        <br/><b><font size = 3 >NB: Do not refresh page during or after form filling.</b></font>
+        <br/>
+        <br/>
+    
+        <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color:rgba(0, 0, 0, 0.644);padding: 1em; color:white; padding:10px;">
+
+            UPGRADE COMING SOON!
+        </div>
+
+    </center>
+</body>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script type="text/javascript">
+        $("body").on("click", "#export", function () {
+            html2canvas($('#tbl')[0], {
+                onrendered: function (canvas) {
+                    var data = canvas.toDataURL();
+                    var docDefinition = {
+                        content: [{
+                            image: data,
+                            width: 500
+                        }]
+                    };
+                    pdfMake.createPdf(docDefinition).download("Table.pdf");
+                }
+            });
+        });
+       
+       
+       function calculate() {
+        var j = document.getElementById('s').value;
+        var e = document.getElementById('m').value;
+        var s = document.getElementById('c').value;
+        var u = document.getElementById('t').value;
+        var g = e * s;
+        document.getElementById('t').value = g;
+        document.getElementById('s').value = j;
+    }
+    
+    function calculate2() {
+        var j2 = document.getElementById('s2').value;
+        var e2 = document.getElementById('m2').value;
+        var s2 = document.getElementById('c2').value;
+        var u2 = document.getElementById('t2').value;
+        var g2 = e2 * s2;
+        document.getElementById('t2').value = g2;
+        document.getElementById('s2').value = j2;
+    }
+    
+    function calculate3() {
+        var j3 = document.getElementById('s3').value;
+        var e3 = document.getElementById('m3').value;
+        var s3 = document.getElementById('c3').value;
+        var u3 = document.getElementById('t3').value;
+        var g3 = e3 * s3;
+        document.getElementById('t3').value = g3;
+        document.getElementById('s3').value = j3;
+    }
+    
+    function calculate4() {
+        var j4 = document.getElementById('s4').value;
+        var e4 = document.getElementById('m4').value;
+        var s4 = document.getElementById('c4').value;
+        var u4 = document.getElementById('t4').value;
+        var g4 = e4 * s4;
+        document.getElementById('t4').value = g4;
+        document.getElementById('s4').value = j4;
+    }
+    
+    function calculate5() {
+        var j5 = document.getElementById('s5').value;
+        var e5 = document.getElementById('m5').value;
+        var s5 = document.getElementById('c5').value;
+        var u5 = document.getElementById('t5').value;
+        var g5 = e5 * s5;
+        document.getElementById('t5').value = g5;
+        document.getElementById('s5').value = j5;
+    }
+    
+    function calculate6() {
+        var j6 = document.getElementById('s6').value;
+        var e6 = document.getElementById('m6').value;
+        var s6 = document.getElementById('c6').value;
+        var u6 = document.getElementById('t6').value;
+        var g6 = e6 * s6;
+        document.getElementById('t6').value = g6;
+        document.getElementById('s6').value = j6;
+    }
+    </script>
+    
+    </html>
